@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projeto PAP</title>
+<script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<!--Eventos-->
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+    $("span").css("display", "inline").fadeOut(2000);
+  });
+});
+</script>
+<!--Cabeçalho-->
+<style>
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: red;
+}
+
+.navbar li {
+  float: left;
+  font-family: arial;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+  background-color: white;
+}
+
+  .toggler { width: 310px; height: 170px; position: relative; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect {position: relative;  width: 240px;  padding: 1em; letter-spacing: 0; font-size: 1.2em; border: 1px solid #000; background: red; color: white; }
+  .newClass { text-indent: 40px; letter-spacing: .4em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.6em; }
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: white; }
+  #selectable .ui-selected { background: black; color: red; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 400px; }
+  #selectable li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
+span {
+  display: none;
+}
+h2 {
+  color: red; 
+}
+.descendants * { 
+  background-color: black;
+  display: block;
+  border: 2px solid white;
+  color: white;
+  padding: 5px;
+  margin: 15px;
+</style>
+<style>
+/* Rodapé
+------------------------------------ */
+footer {
+    background-color: red;
+    clear: both;
+    padding: 20px 0 30px 0;
+    text-align: center;
+    margin-top: 1px;
+    color: white;
+}
+
+footer>n a {
+    padding: 2px 10px;
+    color: white;
+}
+</style>
+<!--Plugin-->
+
+<!--Manipulação DOM-->
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+      $(".menu").toggle(10);
+  });
+});
+</script>
+<!--Traversing-->
+<script>
+$(document).ready(function(){
+  $("p").slice(2).css("background-color", "red");
+});
+</script>
+<!--Delegação de Eventos-->
+<script>
+$(document).ready(function(){
+  $("div").on("click", "button", function(event){
+    $(event.delegateTarget).css("background-color", "black");
+  });
+});
+</script>
+<!--Efeitos-->
+<script>
+$(document).ready(function(){
+  $("#btn-bandeira").click(function(){
+    $("#div1").delay("slow").fadeIn();
+    $("#div2").delay("fast").fadeIn();
+    $("#div3").delay(800).fadeIn();
+    $("#div4").delay(2000).fadeIn();
+    $("#div5").delay(4000).fadeIn();
+  });
+});
+</script>
+<!--Animações-->
+<script> 
+$(document).ready(function(){
+  $("#btn-animacao").click(function(){
+    var div = $("#animacao");  
+    div.animate({left: '40px'}, "slow");
+    div.animate({fontSize: '3em'}, "slow");
+  });
+});
+</script>
+<!--Traversing-->
+<script>
+$(document).ready(function(){
+  $("div").children("p.first").css({"color": "white", "border": "2px solid red"});
+});
+</script>
+<!--Interações-->
+<script>
+  $( function() {
+    $( "#selectable" ).selectable();
+  } );
+  </script>
+<!--Efeitos-->
+<script>
+  $( function() {
+    $( "#efeitos" ).on( "click", function() {
+      $( "#effect" ).toggleClass( "newClass", 1000 );
+    });
+  } );
+  </script>
+<!--Widgets-->
+<script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      heightStyle: "content"
+    });
+  } );
+  </script>
+<!--AJAX-->
+<script>
+$(document).ready(function(){
+  $(document).ajaxError(function(){
+    alert("Verificado com sucesso!");
+  });
+  $("#ajaxx").click(function(){
+    $("div").load("wrongfile.txt");
+  });
+});
+</script>
+</head>
+
+<body style="background-color:black;">
+  <!--Cabeçalho-->
+  <ul class="navbar">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a class="active" href="videos.html">Vídeos</a></li>
+          <li><a class="active" href="plugin.html">Plugins</a></li>
+
+  </ul>
+  <!--AJAX-->
+<div><h2>Verifique se não é um robo</h2></div>
+
+<button id="ajaxx">Capcha</button>
+<br>
+<br>
+<!--Plugin-->
+
+<!--Eventos-->
+<input>
+<p style="color: white;">Quem foi o Mr.Olimpia 2021?</p>
+<!--Manipulação DOM-->
+<h1 style="color:red;"> Chris Bumbstead</h1>
+<img class="menu" src="bum.jpg" width="600" height="400">
+<button id="btn1"> Esconder </button>
+<!--Delegação de Eventos-->
+<div style="background-color:red;">
+  <p style="color: white;">Bumstead nasceu e cresceu em Ottawa, Ontário, onde esteve<br> envolvido em vários esportes durante sua infância, jogando <br>futebol, beisebol, basquete e hóquei no ensino médio. Ele começou<br> a halterofilismo aos 14 anos, e entre o nono e o décimo segundo<br> ano, ele passou de 170 para 225 quilos, aumentando mais as pernas<br>Depois de construir o que ele achava ser um bom físico, Bumstead <br>conheceu o namorado de sua irmã, o fisiculturista profissional Iain <br>Valliere, que o treina desde então.</p>
+  <button id="div">Muda de cor</button>
+</div>
+<!--Traversing-->
+<h1 style="color: red;">Top Bodybuilders</h1>
+<p style="color: white;">Ronnie Coleman</p>
+<p style="color: white;">Chris Cormier</p>
+<p style="color: white;">Franco Columbu</p>
+<p style="color: white;">Johnnie Jackson</p>
+<!--Efeitos-->
+<button id="btn-bandeira">Clique para ver a Bandeira do País do Bumstead</button>
+<br><br>
+<h1 style="color: red;">Bandeira do Chris Bumstead</h1>
+<div style="background-color: black;">
+<div id="div1" style="width:500px;height:250px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:500px;height:250px;display:none;background-color:white;"></div><br>
+<div id="div3" style="width:500px;height:250px;display:none;background-color:red;"></div><br>
+</div>
+<br>
+<button id="btn-animacao">Animação</button>
+<br>
+<br>
+<div id="animacao" style="color: red;height:100px;width:250px;position:absolute;">Mr.Olimpia</div>
+<!--Interações-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="color: red;">Selecione a Idade do Chris Bumstead</h1>
+<ol id="selectable">
+  <li class="ui-state-default", style="color: red;">2</li>
+  <li class="ui-state-default", style="color: red;">7</li>
+</ol>
+
+<!--Efeitos-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="toggler">
+  <div id="effect" class="newClass ui-corner-all">
+     Christopher Adam Bumstead 
+  </div>
+</div>
+ 
+<button id="efeitos" class="ui-state-default ui-corner-all">Efeito</button>
+<!--Widgets-->
+<div id="accordion">
+  <h3 style="color: red;">Dieta</h3>
+  <div style="color: white;">
+Refeição 1: 1 1/2 chavena de Claras de Ovo, 2 Ovos Inteiros e 1 chavena de Aveia<br>
+Refeição 2: 8 Peças Frango, 1 chavena de Arroz Jasmim e 11 onças Legumes Mistos<br>
+Refeição 3: 8 Postas de Peixe Branco, 7 Porções Batata Doce e 11 onças Legumes Mistos<br>
+Refeição 4: (Pré-treino) 7 Porções de Peixe Branco e 2 chavenas de Arroz Jasmim<br>
+Refeição 5: (Pós-Treino Shake) 50g 100% Whey Isolate misturado em água<br>
+Refeição 6: 8 Porções Frango, 6 Porções Batata Doce, 2 Porções de Brócolis e 2 Porções Aspargos<br>
+Refeição 7: 2 1/2 chavena de claras de ovo, 3 ovos inteiros e 11 onças legumes mistos</p>
+  </div>
+  <h3 style="color: red;">Os 3 melhores exercícios de Chris</h3>
+  <div>
+    <p style="color: white; background-color: black;">Chris recomenda para qualquer um que tenha pouco tempo na academia,<br>
+     é melhor manter exercícios compostos, pois estes são os exercícios que<br>
+      produzem os melhores resultados gerais. Uma lista do top 3 do Chris pode<br>
+      ser vista abaixo.</p>
+  </div>
+  <h3 style="color: red;">Medidas Corporais</h3>
+  <div>
+    <p style="color: white;">
+      Altura: 6 ft 1 in (185 cm)<br>
+      Peso do concurso: 108 kg<br>
+      Peso fora da temporada: 260 libras (118 kg)<br>
+      Peito: 51" (130 cm)<br>
+      Cintura: 30" (76 cm)<br>
+      Bíceps: 20" (51 cm)<br>
+     </p>
+  </div>
+</div>
+<br>
+<!--Traversing-->
+<div class="descendants" style="width:400px;">
+  <p class="first" style="color: red;">Mr.Olimpia
+    <span>Chris Bumstead</span>   
+  </p>
+</div>
+<!--Rodapé-->
+            <footer>
+                <n>
+                    <a>© 2022 DJF - Todos os direitos reservados.</a>
+                </n>
+            </footer>
+
+</body>
+</html>
